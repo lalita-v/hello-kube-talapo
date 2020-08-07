@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-kubernetes
+  name: hello-kubernetes-talapo
 spec:
   type: LoadBalancer
   ports:
@@ -18,14 +18,14 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-kubernetes
+      app: hello-kubernetes-talapo
   template:
     metadata:
       labels:
-        app: hello-kubernetes
+        app: hello-kubernetes-talapo
     spec:
       containers:
-      - name: hello-kubernetes
+      - name: hello-kubernetes-talapo
         image: paulbouwer/hello-kubernetes:1.8
         ports:
         - containerPort: 8080
